@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/output.css">
+</head>
+<body class="bg-black">
+    <div class=" mx-auto rounded-3  mt-5 text-white " style="height: 300px;width: 500px;box-shadow: 0 0 20px 10px rgb(230, 198, 19); transform: translateY(100px);">
+<div class="p-4 ">
+<h1 class="mt-1 mb-4">Tempreture Converter</h1>
+<form action="" class="d-flex ">
+    <input type="number" class="form-control w-50" id="input" placeholder="input value">
+    <select class="form-select w-25 ms-2" id="select">
+        
+        <option value="tocelsius">Celsius</option>
+        <option value="tofahrenheit">Fahrenheit</option>
+        
+    </select>
+</form>
+<button class="btn fw-bold bg-black text-white border border-white  mt-4" id="btn">Convert</button>
+<p id="resultelement" class="mt-3">
+
+</p>
+
+</div>
+
+</div>
+    </div>
+
+    <script>
+
+    const input = document.getElementById("input");
+    const select = document.getElementById("select");
+    const btn = document.getElementById("btn");
+    const resultelement = document.getElementById("resultelement");
+
+    btn.onclick = ()=>{
+if(input.value > 0){
+    if(select.value === "tocelsius"){
+    const Tocelsius = (input.value - 32 ) * 5/9;
+    resultelement.innerHTML = `${Tocelsius.toFixed(3)} &deg;C`;
+    input.value = null;
+}else if(select.value === "tofahrenheit"){
+    const ToFahrenheit = (input.value * 9/5) + 32;
+    resultelement.innerHTML= `${ToFahrenheit.toFixed(3)} &deg;F`;
+    input.value = null;
+ 
+}
+}else{
+    window.alert(" input your value first")
+}
+
+
+
+
+    }
+
+
+    </script>
+    
+</body>
+</html>
